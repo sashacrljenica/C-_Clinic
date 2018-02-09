@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCFClinic" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFClinic" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfvwMedicalDepartments">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="vwMedicalDepartments" nillable="true" type="tns:vwMedicalDepartments" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfvwMedicalDepartments" nillable="true" type="tns:ArrayOfvwMedicalDepartments" />
+  <xs:complexType name="vwMedicalDepartments">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContactPhoneOfDepartment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MedicalDepartmentID" type="xs:int" />
+      <xs:element minOccurs="0" name="NameOfDepartment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfFloor" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="vwMedicalDepartments" nillable="true" type="tns:vwMedicalDepartments" />
+  <xs:complexType name="ArrayOfvwMedicalStaff">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="vwMedicalStaff" nillable="true" type="tns:vwMedicalStaff" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfvwMedicalStaff" nillable="true" type="tns:ArrayOfvwMedicalStaff" />
+  <xs:complexType name="vwMedicalStaff">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BloodType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateOfBirth" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Expr1" type="xs:int" />
+      <xs:element minOccurs="0" name="MaleOrFemale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MedicalDepartmentID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MedicalStaffID" type="xs:int" />
+      <xs:element minOccurs="0" name="NameAndSurname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameOfDepartment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameOfJob" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusOfEmployee" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="vwMedicalStaff" nillable="true" type="tns:vwMedicalStaff" />
+  <xs:complexType name="ArrayOfvwPatients">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="vwPatients" nillable="true" type="tns:vwPatients" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfvwPatients" nillable="true" type="tns:ArrayOfvwPatients" />
+  <xs:complexType name="vwPatients">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BloodType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateOfBirth" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MaleOrFemale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameAndSurname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfIDCard" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientID" type="xs:int" />
+      <xs:element minOccurs="0" name="PhoneNumberContactPerson" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumberHome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumberMobile" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="vwPatients" nillable="true" type="tns:vwPatients" />
+  <xs:complexType name="ArrayOfvwDoctorAppointment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="vwDoctorAppointment" nillable="true" type="tns:vwDoctorAppointment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfvwDoctorAppointment" nillable="true" type="tns:ArrayOfvwDoctorAppointment" />
+  <xs:complexType name="vwDoctorAppointment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateOfScheduling" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DoctorAppointmentID" type="xs:int" />
+      <xs:element minOccurs="0" name="Expr1" type="xs:int" />
+      <xs:element minOccurs="0" name="Expr2" type="xs:int" />
+      <xs:element minOccurs="0" name="MedicalDepartmentID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NameAndSurname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameOfDepartment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="vwDoctorAppointment" nillable="true" type="tns:vwDoctorAppointment" />
+  <xs:complexType name="ArrayOfvwLogin">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="vwLogin" nillable="true" type="tns:vwLogin" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfvwLogin" nillable="true" type="tns:ArrayOfvwLogin" />
+  <xs:complexType name="vwLogin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Expr1" type="xs:int" />
+      <xs:element minOccurs="0" name="Expr2" type="xs:int" />
+      <xs:element minOccurs="0" name="Expr3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoginID" type="xs:int" />
+      <xs:element minOccurs="0" name="MedicalStaffID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NameAndSurname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="vwLogin" nillable="true" type="tns:vwLogin" />
+  <xs:complexType name="ArrayOfvwPharmacy">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="vwPharmacy" nillable="true" type="tns:vwPharmacy" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfvwPharmacy" nillable="true" type="tns:ArrayOfvwPharmacy" />
+  <xs:complexType name="vwPharmacy">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Expr1" type="xs:int" />
+      <xs:element minOccurs="0" name="ManufacturerID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ManufacturerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameOfTheDrug" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PharmacyID" type="xs:int" />
+      <xs:element minOccurs="0" name="QuantityOnCondition" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ScopeOfApplication" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="vwPharmacy" nillable="true" type="tns:vwPharmacy" />
+  <xs:complexType name="ArrayOfvwTakeMedication">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="vwTakeMedication" nillable="true" type="tns:vwTakeMedication" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfvwTakeMedication" nillable="true" type="tns:ArrayOfvwTakeMedication" />
+  <xs:complexType name="vwTakeMedication">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateOfTaking" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Expr1" type="xs:int" />
+      <xs:element minOccurs="0" name="Expr2" type="xs:int" />
+      <xs:element minOccurs="0" name="Expr3" type="xs:int" />
+      <xs:element minOccurs="0" name="Expr4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MedicalStaffID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NameAndSurname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameOfTheDrug" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PharmacyID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="QuantityOfTheDrug" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TakeMedicationID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="vwTakeMedication" nillable="true" type="tns:vwTakeMedication" />
+  <xs:complexType name="ArrayOfvwPharmaceuticalManufacturing">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="vwPharmaceuticalManufacturing" nillable="true" type="tns:vwPharmaceuticalManufacturing" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfvwPharmaceuticalManufacturing" nillable="true" type="tns:ArrayOfvwPharmaceuticalManufacturing" />
+  <xs:complexType name="vwPharmaceuticalManufacturing">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddressOfManufacturer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailOfManufacturer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ManufacturerID" type="xs:int" />
+      <xs:element minOccurs="0" name="ManufacturerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumberOfManufacturer" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="vwPharmaceuticalManufacturing" nillable="true" type="tns:vwPharmaceuticalManufacturing" />
+  <xs:complexType name="ArrayOfvwLoginCurrent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="vwLoginCurrent" nillable="true" type="tns:vwLoginCurrent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfvwLoginCurrent" nillable="true" type="tns:ArrayOfvwLoginCurrent" />
+  <xs:complexType name="vwLoginCurrent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Expr1" type="xs:int" />
+      <xs:element minOccurs="0" name="Expr2" type="xs:int" />
+      <xs:element minOccurs="0" name="Expr3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoginCurrentID" type="xs:int" />
+      <xs:element minOccurs="0" name="LoginDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MedicalStaffID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NameAndSurname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="vwLoginCurrent" nillable="true" type="tns:vwLoginCurrent" />
+  <xs:complexType name="CompositeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoolValue" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StringValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompositeType" nillable="true" type="tns:CompositeType" />
+</xs:schema>

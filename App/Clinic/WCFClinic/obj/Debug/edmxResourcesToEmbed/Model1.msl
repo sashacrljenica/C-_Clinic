@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ClinicModelStoreContainer" CdmEntityContainer="ClinicEntities1">
+    <EntitySetMapping Name="tblDoctorAppointment">
+      <EntityTypeMapping TypeName="ClinicModel.tblDoctorAppointment">
+        <MappingFragment StoreEntitySet="tblDoctorAppointment">
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="MedicalDepartmentID" ColumnName="MedicalDepartmentID" />
+          <ScalarProperty Name="DateOfScheduling" ColumnName="DateOfScheduling" />
+          <ScalarProperty Name="DoctorAppointmentID" ColumnName="DoctorAppointmentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLogin">
+      <EntityTypeMapping TypeName="ClinicModel.tblLogin">
+        <MappingFragment StoreEntitySet="tblLogin">
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="MedicalStaffID" ColumnName="MedicalStaffID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLoginCurrent">
+      <EntityTypeMapping TypeName="ClinicModel.tblLoginCurrent">
+        <MappingFragment StoreEntitySet="tblLoginCurrent">
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="MedicalStaffID" ColumnName="MedicalStaffID" />
+          <ScalarProperty Name="LoginCurrentID" ColumnName="LoginCurrentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMedicalDepartments">
+      <EntityTypeMapping TypeName="ClinicModel.tblMedicalDepartments">
+        <MappingFragment StoreEntitySet="tblMedicalDepartments">
+          <ScalarProperty Name="ContactPhoneOfDepartment" ColumnName="ContactPhoneOfDepartment" />
+          <ScalarProperty Name="NumberOfFloor" ColumnName="NumberOfFloor" />
+          <ScalarProperty Name="NameOfDepartment" ColumnName="NameOfDepartment" />
+          <ScalarProperty Name="MedicalDepartmentID" ColumnName="MedicalDepartmentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMedicalStaff">
+      <EntityTypeMapping TypeName="ClinicModel.tblMedicalStaff">
+        <MappingFragment StoreEntitySet="tblMedicalStaff">
+          <ScalarProperty Name="MedicalDepartmentID" ColumnName="MedicalDepartmentID" />
+          <ScalarProperty Name="BloodType" ColumnName="BloodType" />
+          <ScalarProperty Name="StatusOfEmployee" ColumnName="StatusOfEmployee" />
+          <ScalarProperty Name="NameOfJob" ColumnName="NameOfJob" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="MaleOrFemale" ColumnName="MaleOrFemale" />
+          <ScalarProperty Name="NameAndSurname" ColumnName="NameAndSurname" />
+          <ScalarProperty Name="MedicalStaffID" ColumnName="MedicalStaffID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPatients">
+      <EntityTypeMapping TypeName="ClinicModel.tblPatients">
+        <MappingFragment StoreEntitySet="tblPatients">
+          <ScalarProperty Name="BloodType" ColumnName="BloodType" />
+          <ScalarProperty Name="NumberOfIDCard" ColumnName="NumberOfIDCard" />
+          <ScalarProperty Name="PhoneNumberContactPerson" ColumnName="PhoneNumberContactPerson" />
+          <ScalarProperty Name="PhoneNumberMobile" ColumnName="PhoneNumberMobile" />
+          <ScalarProperty Name="PhoneNumberHome" ColumnName="PhoneNumberHome" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="MaleOrFemale" ColumnName="MaleOrFemale" />
+          <ScalarProperty Name="NameAndSurname" ColumnName="NameAndSurname" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPharmaceuticalManufacturing">
+      <EntityTypeMapping TypeName="ClinicModel.tblPharmaceuticalManufacturing">
+        <MappingFragment StoreEntitySet="tblPharmaceuticalManufacturing">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="EmailOfManufacturer" ColumnName="EmailOfManufacturer" />
+          <ScalarProperty Name="PhoneNumberOfManufacturer" ColumnName="PhoneNumberOfManufacturer" />
+          <ScalarProperty Name="AddressOfManufacturer" ColumnName="AddressOfManufacturer" />
+          <ScalarProperty Name="ManufacturerName" ColumnName="ManufacturerName" />
+          <ScalarProperty Name="ManufacturerID" ColumnName="ManufacturerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPharmacy">
+      <EntityTypeMapping TypeName="ClinicModel.tblPharmacy">
+        <MappingFragment StoreEntitySet="tblPharmacy">
+          <ScalarProperty Name="ManufacturerID" ColumnName="ManufacturerID" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="QuantityOnCondition" ColumnName="QuantityOnCondition" />
+          <ScalarProperty Name="ScopeOfApplication" ColumnName="ScopeOfApplication" />
+          <ScalarProperty Name="NameOfTheDrug" ColumnName="NameOfTheDrug" />
+          <ScalarProperty Name="PharmacyID" ColumnName="PharmacyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTakeMedication">
+      <EntityTypeMapping TypeName="ClinicModel.tblTakeMedication">
+        <MappingFragment StoreEntitySet="tblTakeMedication">
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="MedicalStaffID" ColumnName="MedicalStaffID" />
+          <ScalarProperty Name="PharmacyID" ColumnName="PharmacyID" />
+          <ScalarProperty Name="QuantityOfTheDrug" ColumnName="QuantityOfTheDrug" />
+          <ScalarProperty Name="DateOfTaking" ColumnName="DateOfTaking" />
+          <ScalarProperty Name="TakeMedicationID" ColumnName="TakeMedicationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwDoctorAppointment">
+      <EntityTypeMapping TypeName="ClinicModel.vwDoctorAppointment">
+        <MappingFragment StoreEntitySet="vwDoctorAppointment">
+          <ScalarProperty Name="NameAndSurname" ColumnName="NameAndSurname" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="NameOfDepartment" ColumnName="NameOfDepartment" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="MedicalDepartmentID" ColumnName="MedicalDepartmentID" />
+          <ScalarProperty Name="DateOfScheduling" ColumnName="DateOfScheduling" />
+          <ScalarProperty Name="DoctorAppointmentID" ColumnName="DoctorAppointmentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwLogin">
+      <EntityTypeMapping TypeName="ClinicModel.vwLogin">
+        <MappingFragment StoreEntitySet="vwLogin">
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="NameAndSurname" ColumnName="NameAndSurname" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="MedicalStaffID" ColumnName="MedicalStaffID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwLoginCurrent">
+      <EntityTypeMapping TypeName="ClinicModel.vwLoginCurrent">
+        <MappingFragment StoreEntitySet="vwLoginCurrent">
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="NameAndSurname" ColumnName="NameAndSurname" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="MedicalStaffID" ColumnName="MedicalStaffID" />
+          <ScalarProperty Name="LoginDate" ColumnName="LoginDate" />
+          <ScalarProperty Name="LoginCurrentID" ColumnName="LoginCurrentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwMedicalDepartments">
+      <EntityTypeMapping TypeName="ClinicModel.vwMedicalDepartments">
+        <MappingFragment StoreEntitySet="vwMedicalDepartments">
+          <ScalarProperty Name="ContactPhoneOfDepartment" ColumnName="ContactPhoneOfDepartment" />
+          <ScalarProperty Name="NumberOfFloor" ColumnName="NumberOfFloor" />
+          <ScalarProperty Name="NameOfDepartment" ColumnName="NameOfDepartment" />
+          <ScalarProperty Name="MedicalDepartmentID" ColumnName="MedicalDepartmentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwMedicalStaff">
+      <EntityTypeMapping TypeName="ClinicModel.vwMedicalStaff">
+        <MappingFragment StoreEntitySet="vwMedicalStaff">
+          <ScalarProperty Name="NameOfDepartment" ColumnName="NameOfDepartment" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="MedicalDepartmentID" ColumnName="MedicalDepartmentID" />
+          <ScalarProperty Name="BloodType" ColumnName="BloodType" />
+          <ScalarProperty Name="StatusOfEmployee" ColumnName="StatusOfEmployee" />
+          <ScalarProperty Name="NameOfJob" ColumnName="NameOfJob" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="MaleOrFemale" ColumnName="MaleOrFemale" />
+          <ScalarProperty Name="NameAndSurname" ColumnName="NameAndSurname" />
+          <ScalarProperty Name="MedicalStaffID" ColumnName="MedicalStaffID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwPatients">
+      <EntityTypeMapping TypeName="ClinicModel.vwPatients">
+        <MappingFragment StoreEntitySet="vwPatients">
+          <ScalarProperty Name="BloodType" ColumnName="BloodType" />
+          <ScalarProperty Name="NumberOfIDCard" ColumnName="NumberOfIDCard" />
+          <ScalarProperty Name="PhoneNumberContactPerson" ColumnName="PhoneNumberContactPerson" />
+          <ScalarProperty Name="PhoneNumberMobile" ColumnName="PhoneNumberMobile" />
+          <ScalarProperty Name="PhoneNumberHome" ColumnName="PhoneNumberHome" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="MaleOrFemale" ColumnName="MaleOrFemale" />
+          <ScalarProperty Name="NameAndSurname" ColumnName="NameAndSurname" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwPharmaceuticalManufacturing">
+      <EntityTypeMapping TypeName="ClinicModel.vwPharmaceuticalManufacturing">
+        <MappingFragment StoreEntitySet="vwPharmaceuticalManufacturing">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="EmailOfManufacturer" ColumnName="EmailOfManufacturer" />
+          <ScalarProperty Name="PhoneNumberOfManufacturer" ColumnName="PhoneNumberOfManufacturer" />
+          <ScalarProperty Name="AddressOfManufacturer" ColumnName="AddressOfManufacturer" />
+          <ScalarProperty Name="ManufacturerName" ColumnName="ManufacturerName" />
+          <ScalarProperty Name="ManufacturerID" ColumnName="ManufacturerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwPharmacy">
+      <EntityTypeMapping TypeName="ClinicModel.vwPharmacy">
+        <MappingFragment StoreEntitySet="vwPharmacy">
+          <ScalarProperty Name="ManufacturerName" ColumnName="ManufacturerName" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="ManufacturerID" ColumnName="ManufacturerID" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="QuantityOnCondition" ColumnName="QuantityOnCondition" />
+          <ScalarProperty Name="ScopeOfApplication" ColumnName="ScopeOfApplication" />
+          <ScalarProperty Name="NameOfTheDrug" ColumnName="NameOfTheDrug" />
+          <ScalarProperty Name="PharmacyID" ColumnName="PharmacyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwTakeMedication">
+      <EntityTypeMapping TypeName="ClinicModel.vwTakeMedication">
+        <MappingFragment StoreEntitySet="vwTakeMedication">
+          <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="NameAndSurname" ColumnName="NameAndSurname" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="NameOfTheDrug" ColumnName="NameOfTheDrug" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="MedicalStaffID" ColumnName="MedicalStaffID" />
+          <ScalarProperty Name="PharmacyID" ColumnName="PharmacyID" />
+          <ScalarProperty Name="QuantityOfTheDrug" ColumnName="QuantityOfTheDrug" />
+          <ScalarProperty Name="DateOfTaking" ColumnName="DateOfTaking" />
+          <ScalarProperty Name="TakeMedicationID" ColumnName="TakeMedicationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

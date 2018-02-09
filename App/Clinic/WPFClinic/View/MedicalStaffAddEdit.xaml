@@ -1,0 +1,39 @@
+﻿<Window x:Class="WPFClinic.View.MedicalStaffAddEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFClinic.View"
+        mc:Ignorable="d"
+        Title="Medical Staff Add/Edit/Delete" Height="600" Width="1000" Background="PowderBlue" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DataGrid Name="DataGridPatients" ItemsSource="{Binding MedicalStaffList, UpdateSourceTrigger=PropertyChanged}"
+                      SelectedItem="{Binding MedicalStaff, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" HeadersVisibility="Column"
+                      AutoGenerateColumns="False" HorizontalGridLinesBrush="Black" BorderBrush="Black" Foreground="Black" FontWeight="Bold" Margin="48,110,51.6,121">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name and Surname" Binding="{Binding NameAndSurname}"/>
+                <DataGridTextColumn Header="M/F" Binding="{Binding MaleOrFemale}"/>
+                <DataGridTextColumn Header="Date of Birth" Binding="{Binding DateOfBirth, StringFormat=dd/MM/yyyy}"/>
+                <DataGridTextColumn Header="Address" Binding="{Binding Address}"/>
+                <DataGridTextColumn Header="Phone Number" Binding="{Binding PhoneNumber}"/>
+                <DataGridTextColumn Header="Name Of Job" Binding="{Binding NameOfJob}"/>
+                <DataGridTextColumn Header="Status of Employee" Binding="{Binding StatusOfEmployee}"/>
+                <DataGridTextColumn Header="Blood type" Binding="{Binding BloodType}"/>
+                <DataGridTextColumn Header="Name of Medical Department" Binding="{Binding NameOfDepartment}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="lblTitle" Content="CRUD operations for Medical Staff" HorizontalAlignment="Left" Margin="48,44,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Button x:Name="btnAdd" Content="Add" 
+                Command="{Binding AddNewMedicalStaff, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Margin="48,481,0,0" VerticalAlignment="Top" Width="75" FontWeight="Bold"/>
+        <Button x:Name="btnEdit" Content="Edit"
+                Command="{Binding EditMedicalStaff, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Margin="152,481,0,0" VerticalAlignment="Top" Width="75" FontWeight="Bold"/>
+        <Button x:Name="btnDelete" Content="Delete" 
+                Command="{Binding DeleteMedicalStaff, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Margin="753,487,0,0" VerticalAlignment="Top" Width="75" FontWeight="Bold"/>
+        <Button x:Name="button" Content="Close" 
+                Command="{Binding Close, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Margin="867,487,0,0" VerticalAlignment="Top" Width="75" FontWeight="Bold"/>
+    </Grid>
+</Window>
