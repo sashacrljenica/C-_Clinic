@@ -23,4 +23,4 @@ dist/
 nbdist/
 .nb-gradle/
 
-### VisualStudio ###bin/.obj/
+### VisualStudio ###.bin.obj
