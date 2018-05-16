@@ -1,0 +1,555 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ClinicModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblDoctorAppointment">
+    <Key>
+      <PropertyRef Name="DoctorAppointmentID" />
+    </Key>
+    <Property Name="DoctorAppointmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateOfScheduling" Type="date" />
+    <Property Name="MedicalDepartmentID" Type="int" />
+    <Property Name="PatientID" Type="int" />
+  </EntityType>
+  <EntityType Name="tblLogin">
+    <Key>
+      <PropertyRef Name="LoginID" />
+    </Key>
+    <Property Name="LoginID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="100" />
+    <Property Name="MedicalStaffID" Type="int" />
+    <Property Name="PatientID" Type="int" />
+  </EntityType>
+  <EntityType Name="tblLoginCurrent">
+    <Key>
+      <PropertyRef Name="LoginCurrentID" />
+    </Key>
+    <Property Name="LoginCurrentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LoginDate" Type="datetime" />
+    <Property Name="MedicalStaffID" Type="int" />
+    <Property Name="PatientID" Type="int" />
+  </EntityType>
+  <EntityType Name="tblMedicalDepartments">
+    <Key>
+      <PropertyRef Name="MedicalDepartmentID" />
+    </Key>
+    <Property Name="MedicalDepartmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameOfDepartment" Type="varchar" MaxLength="50" />
+    <Property Name="NumberOfFloor" Type="int" />
+    <Property Name="ContactPhoneOfDepartment" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblMedicalStaff">
+    <Key>
+      <PropertyRef Name="MedicalStaffID" />
+    </Key>
+    <Property Name="MedicalStaffID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameAndSurname" Type="varchar" MaxLength="50" />
+    <Property Name="MaleOrFemale" Type="varchar" MaxLength="1" />
+    <Property Name="DateOfBirth" Type="date" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+    <Property Name="NameOfJob" Type="varchar" MaxLength="50" />
+    <Property Name="StatusOfEmployee" Type="varchar" MaxLength="50" />
+    <Property Name="BloodType" Type="varchar" MaxLength="3" />
+    <Property Name="MedicalDepartmentID" Type="int" />
+  </EntityType>
+  <EntityType Name="tblPatients">
+    <Key>
+      <PropertyRef Name="PatientID" />
+    </Key>
+    <Property Name="PatientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameAndSurname" Type="varchar" MaxLength="50" />
+    <Property Name="MaleOrFemale" Type="varchar" MaxLength="1" />
+    <Property Name="DateOfBirth" Type="date" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNumberHome" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNumberMobile" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNumberContactPerson" Type="varchar" MaxLength="50" />
+    <Property Name="NumberOfIDCard" Type="varchar" MaxLength="50" />
+    <Property Name="BloodType" Type="varchar" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="tblPharmaceuticalManufacturing">
+    <Key>
+      <PropertyRef Name="ManufacturerID" />
+    </Key>
+    <Property Name="ManufacturerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ManufacturerName" Type="varchar" MaxLength="50" />
+    <Property Name="AddressOfManufacturer" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNumberOfManufacturer" Type="varchar" MaxLength="50" />
+    <Property Name="EmailOfManufacturer" Type="varchar" MaxLength="50" />
+    <Property Name="Note" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblPharmacy">
+    <Key>
+      <PropertyRef Name="PharmacyID" />
+    </Key>
+    <Property Name="PharmacyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameOfTheDrug" Type="varchar" MaxLength="20" />
+    <Property Name="ScopeOfApplication" Type="varchar" MaxLength="50" />
+    <Property Name="QuantityOnCondition" Type="int" />
+    <Property Name="Note" Type="varchar" MaxLength="50" />
+    <Property Name="ManufacturerID" Type="int" />
+  </EntityType>
+  <EntityType Name="tblTakeMedication">
+    <Key>
+      <PropertyRef Name="TakeMedicationID" />
+    </Key>
+    <Property Name="TakeMedicationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateOfTaking" Type="date" />
+    <Property Name="QuantityOfTheDrug" Type="int" />
+    <Property Name="PharmacyID" Type="int" />
+    <Property Name="MedicalStaffID" Type="int" />
+    <Property Name="PatientID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Clinic.dbo.vwDoctorAppointment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwDoctorAppointment">
+    <Key>
+      <PropertyRef Name="DoctorAppointmentID" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="Expr2" />
+    </Key>
+    <Property Name="DoctorAppointmentID" Type="int" Nullable="false" />
+    <Property Name="DateOfScheduling" Type="date" />
+    <Property Name="MedicalDepartmentID" Type="int" />
+    <Property Name="PatientID" Type="int" />
+    <Property Name="Expr1" Type="int" Nullable="false" />
+    <Property Name="NameOfDepartment" Type="varchar" MaxLength="50" />
+    <Property Name="Expr2" Type="int" Nullable="false" />
+    <Property Name="NameAndSurname" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Clinic.dbo.vwLogin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwLogin">
+    <Key>
+      <PropertyRef Name="LoginID" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="Expr2" />
+    </Key>
+    <Property Name="LoginID" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="100" />
+    <Property Name="MedicalStaffID" Type="int" />
+    <Property Name="PatientID" Type="int" />
+    <Property Name="Expr1" Type="int" Nullable="false" />
+    <Property Name="NameAndSurname" Type="varchar" MaxLength="50" />
+    <Property Name="Expr2" Type="int" Nullable="false" />
+    <Property Name="Expr3" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Clinic.dbo.vwLoginCurrent' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwLoginCurrent">
+    <Key>
+      <PropertyRef Name="LoginCurrentID" />
+      <PropertyRef Name="LoginDate" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="Expr2" />
+    </Key>
+    <Property Name="LoginCurrentID" Type="int" Nullable="false" />
+    <Property Name="LoginDate" Type="datetime" Nullable="false" />
+    <Property Name="MedicalStaffID" Type="int" />
+    <Property Name="PatientID" Type="int" />
+    <Property Name="Expr1" Type="int" Nullable="false" />
+    <Property Name="NameAndSurname" Type="varchar" MaxLength="50" />
+    <Property Name="Expr2" Type="int" Nullable="false" />
+    <Property Name="Expr3" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Clinic.dbo.vwMedicalDepartments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwMedicalDepartments">
+    <Key>
+      <PropertyRef Name="MedicalDepartmentID" />
+    </Key>
+    <Property Name="MedicalDepartmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameOfDepartment" Type="varchar" MaxLength="50" />
+    <Property Name="NumberOfFloor" Type="int" />
+    <Property Name="ContactPhoneOfDepartment" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Clinic.dbo.vwMedicalStaff' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwMedicalStaff">
+    <Key>
+      <PropertyRef Name="MedicalStaffID" />
+      <PropertyRef Name="Expr1" />
+    </Key>
+    <Property Name="MedicalStaffID" Type="int" Nullable="false" />
+    <Property Name="NameAndSurname" Type="varchar" MaxLength="50" />
+    <Property Name="MaleOrFemale" Type="varchar" MaxLength="1" />
+    <Property Name="DateOfBirth" Type="date" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+    <Property Name="NameOfJob" Type="varchar" MaxLength="50" />
+    <Property Name="StatusOfEmployee" Type="varchar" MaxLength="50" />
+    <Property Name="BloodType" Type="varchar" MaxLength="3" />
+    <Property Name="MedicalDepartmentID" Type="int" />
+    <Property Name="Expr1" Type="int" Nullable="false" />
+    <Property Name="NameOfDepartment" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Clinic.dbo.vwPatients' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwPatients">
+    <Key>
+      <PropertyRef Name="PatientID" />
+    </Key>
+    <Property Name="PatientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameAndSurname" Type="varchar" MaxLength="50" />
+    <Property Name="MaleOrFemale" Type="varchar" MaxLength="1" />
+    <Property Name="DateOfBirth" Type="date" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNumberHome" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNumberMobile" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNumberContactPerson" Type="varchar" MaxLength="50" />
+    <Property Name="NumberOfIDCard" Type="varchar" MaxLength="50" />
+    <Property Name="BloodType" Type="varchar" MaxLength="3" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Clinic.dbo.vwPharmaceuticalManufacturing' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwPharmaceuticalManufacturing">
+    <Key>
+      <PropertyRef Name="ManufacturerID" />
+    </Key>
+    <Property Name="ManufacturerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ManufacturerName" Type="varchar" MaxLength="50" />
+    <Property Name="AddressOfManufacturer" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNumberOfManufacturer" Type="varchar" MaxLength="50" />
+    <Property Name="EmailOfManufacturer" Type="varchar" MaxLength="50" />
+    <Property Name="Note" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Clinic.dbo.vwPharmacy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwPharmacy">
+    <Key>
+      <PropertyRef Name="PharmacyID" />
+      <PropertyRef Name="Expr1" />
+    </Key>
+    <Property Name="PharmacyID" Type="int" Nullable="false" />
+    <Property Name="NameOfTheDrug" Type="varchar" MaxLength="20" />
+    <Property Name="ScopeOfApplication" Type="varchar" MaxLength="50" />
+    <Property Name="QuantityOnCondition" Type="int" />
+    <Property Name="Note" Type="varchar" MaxLength="50" />
+    <Property Name="ManufacturerID" Type="int" />
+    <Property Name="Expr1" Type="int" Nullable="false" />
+    <Property Name="ManufacturerName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Clinic.dbo.vwTakeMedication' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwTakeMedication">
+    <Key>
+      <PropertyRef Name="TakeMedicationID" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="Expr2" />
+      <PropertyRef Name="Expr3" />
+    </Key>
+    <Property Name="TakeMedicationID" Type="int" Nullable="false" />
+    <Property Name="DateOfTaking" Type="date" />
+    <Property Name="QuantityOfTheDrug" Type="int" />
+    <Property Name="PharmacyID" Type="int" />
+    <Property Name="MedicalStaffID" Type="int" />
+    <Property Name="PatientID" Type="int" />
+    <Property Name="Expr1" Type="int" Nullable="false" />
+    <Property Name="NameOfTheDrug" Type="varchar" MaxLength="20" />
+    <Property Name="Expr2" Type="int" Nullable="false" />
+    <Property Name="NameAndSurname" Type="varchar" MaxLength="50" />
+    <Property Name="Expr3" Type="int" Nullable="false" />
+    <Property Name="Expr4" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__tblDoctor__Medic__1B0907CE">
+    <End Role="tblMedicalDepartments" Type="Self.tblMedicalDepartments" Multiplicity="0..1" />
+    <End Role="tblDoctorAppointment" Type="Self.tblDoctorAppointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMedicalDepartments">
+        <PropertyRef Name="MedicalDepartmentID" />
+      </Principal>
+      <Dependent Role="tblDoctorAppointment">
+        <PropertyRef Name="MedicalDepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblDoctor__Patie__1BFD2C07">
+    <End Role="tblPatients" Type="Self.tblPatients" Multiplicity="0..1" />
+    <End Role="tblDoctorAppointment" Type="Self.tblDoctorAppointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPatients">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="tblDoctorAppointment">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblLogin__Medica__173876EA">
+    <End Role="tblMedicalStaff" Type="Self.tblMedicalStaff" Multiplicity="0..1" />
+    <End Role="tblLogin" Type="Self.tblLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMedicalStaff">
+        <PropertyRef Name="MedicalStaffID" />
+      </Principal>
+      <Dependent Role="tblLogin">
+        <PropertyRef Name="MedicalStaffID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblLogin__Patien__182C9B23">
+    <End Role="tblPatients" Type="Self.tblPatients" Multiplicity="0..1" />
+    <End Role="tblLogin" Type="Self.tblLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPatients">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="tblLogin">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblLoginC__Medic__76619304">
+    <End Role="tblMedicalStaff" Type="Self.tblMedicalStaff" Multiplicity="0..1" />
+    <End Role="tblLoginCurrent" Type="Self.tblLoginCurrent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMedicalStaff">
+        <PropertyRef Name="MedicalStaffID" />
+      </Principal>
+      <Dependent Role="tblLoginCurrent">
+        <PropertyRef Name="MedicalStaffID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblLoginC__Patie__7755B73D">
+    <End Role="tblPatients" Type="Self.tblPatients" Multiplicity="0..1" />
+    <End Role="tblLoginCurrent" Type="Self.tblLoginCurrent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPatients">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="tblLoginCurrent">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblMedica__Medic__1273C1CD">
+    <End Role="tblMedicalDepartments" Type="Self.tblMedicalDepartments" Multiplicity="0..1" />
+    <End Role="tblMedicalStaff" Type="Self.tblMedicalStaff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMedicalDepartments">
+        <PropertyRef Name="MedicalDepartmentID" />
+      </Principal>
+      <Dependent Role="tblMedicalStaff">
+        <PropertyRef Name="MedicalDepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblPharma__Manuf__20C1E124">
+    <End Role="tblPharmaceuticalManufacturing" Type="Self.tblPharmaceuticalManufacturing" Multiplicity="0..1" />
+    <End Role="tblPharmacy" Type="Self.tblPharmacy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPharmaceuticalManufacturing">
+        <PropertyRef Name="ManufacturerID" />
+      </Principal>
+      <Dependent Role="tblPharmacy">
+        <PropertyRef Name="ManufacturerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblTakeMe__Medic__24927208">
+    <End Role="tblMedicalStaff" Type="Self.tblMedicalStaff" Multiplicity="0..1" />
+    <End Role="tblTakeMedication" Type="Self.tblTakeMedication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMedicalStaff">
+        <PropertyRef Name="MedicalStaffID" />
+      </Principal>
+      <Dependent Role="tblTakeMedication">
+        <PropertyRef Name="MedicalStaffID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblTakeMe__Patie__25869641">
+    <End Role="tblPatients" Type="Self.tblPatients" Multiplicity="0..1" />
+    <End Role="tblTakeMedication" Type="Self.tblTakeMedication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPatients">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="tblTakeMedication">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblTakeMe__Pharm__239E4DCF">
+    <End Role="tblPharmacy" Type="Self.tblPharmacy" Multiplicity="0..1" />
+    <End Role="tblTakeMedication" Type="Self.tblTakeMedication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPharmacy">
+        <PropertyRef Name="PharmacyID" />
+      </Principal>
+      <Dependent Role="tblTakeMedication">
+        <PropertyRef Name="PharmacyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ClinicModelStoreContainer">
+    <EntitySet Name="tblDoctorAppointment" EntityType="Self.tblDoctorAppointment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblLogin" EntityType="Self.tblLogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblLoginCurrent" EntityType="Self.tblLoginCurrent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblMedicalDepartments" EntityType="Self.tblMedicalDepartments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblMedicalStaff" EntityType="Self.tblMedicalStaff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblPatients" EntityType="Self.tblPatients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblPharmaceuticalManufacturing" EntityType="Self.tblPharmaceuticalManufacturing" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblPharmacy" EntityType="Self.tblPharmacy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblTakeMedication" EntityType="Self.tblTakeMedication" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vwDoctorAppointment" EntityType="Self.vwDoctorAppointment" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwDoctorAppointment].[DoctorAppointmentID] AS [DoctorAppointmentID], 
+    [vwDoctorAppointment].[DateOfScheduling] AS [DateOfScheduling], 
+    [vwDoctorAppointment].[MedicalDepartmentID] AS [MedicalDepartmentID], 
+    [vwDoctorAppointment].[PatientID] AS [PatientID], 
+    [vwDoctorAppointment].[Expr1] AS [Expr1], 
+    [vwDoctorAppointment].[NameOfDepartment] AS [NameOfDepartment], 
+    [vwDoctorAppointment].[Expr2] AS [Expr2], 
+    [vwDoctorAppointment].[NameAndSurname] AS [NameAndSurname]
+    FROM [dbo].[vwDoctorAppointment] AS [vwDoctorAppointment]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwLogin" EntityType="Self.vwLogin" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwLogin].[LoginID] AS [LoginID], 
+    [vwLogin].[UserName] AS [UserName], 
+    [vwLogin].[Password] AS [Password], 
+    [vwLogin].[MedicalStaffID] AS [MedicalStaffID], 
+    [vwLogin].[PatientID] AS [PatientID], 
+    [vwLogin].[Expr1] AS [Expr1], 
+    [vwLogin].[NameAndSurname] AS [NameAndSurname], 
+    [vwLogin].[Expr2] AS [Expr2], 
+    [vwLogin].[Expr3] AS [Expr3]
+    FROM [dbo].[vwLogin] AS [vwLogin]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwLoginCurrent" EntityType="Self.vwLoginCurrent" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwLoginCurrent].[LoginCurrentID] AS [LoginCurrentID], 
+    [vwLoginCurrent].[LoginDate] AS [LoginDate], 
+    [vwLoginCurrent].[MedicalStaffID] AS [MedicalStaffID], 
+    [vwLoginCurrent].[PatientID] AS [PatientID], 
+    [vwLoginCurrent].[Expr1] AS [Expr1], 
+    [vwLoginCurrent].[NameAndSurname] AS [NameAndSurname], 
+    [vwLoginCurrent].[Expr2] AS [Expr2], 
+    [vwLoginCurrent].[Expr3] AS [Expr3]
+    FROM [dbo].[vwLoginCurrent] AS [vwLoginCurrent]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwMedicalDepartments" EntityType="Self.vwMedicalDepartments" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwMedicalDepartments].[MedicalDepartmentID] AS [MedicalDepartmentID], 
+    [vwMedicalDepartments].[NameOfDepartment] AS [NameOfDepartment], 
+    [vwMedicalDepartments].[NumberOfFloor] AS [NumberOfFloor], 
+    [vwMedicalDepartments].[ContactPhoneOfDepartment] AS [ContactPhoneOfDepartment]
+    FROM [dbo].[vwMedicalDepartments] AS [vwMedicalDepartments]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwMedicalStaff" EntityType="Self.vwMedicalStaff" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwMedicalStaff].[MedicalStaffID] AS [MedicalStaffID], 
+    [vwMedicalStaff].[NameAndSurname] AS [NameAndSurname], 
+    [vwMedicalStaff].[MaleOrFemale] AS [MaleOrFemale], 
+    [vwMedicalStaff].[DateOfBirth] AS [DateOfBirth], 
+    [vwMedicalStaff].[Address] AS [Address], 
+    [vwMedicalStaff].[PhoneNumber] AS [PhoneNumber], 
+    [vwMedicalStaff].[NameOfJob] AS [NameOfJob], 
+    [vwMedicalStaff].[StatusOfEmployee] AS [StatusOfEmployee], 
+    [vwMedicalStaff].[BloodType] AS [BloodType], 
+    [vwMedicalStaff].[MedicalDepartmentID] AS [MedicalDepartmentID], 
+    [vwMedicalStaff].[Expr1] AS [Expr1], 
+    [vwMedicalStaff].[NameOfDepartment] AS [NameOfDepartment]
+    FROM [dbo].[vwMedicalStaff] AS [vwMedicalStaff]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwPatients" EntityType="Self.vwPatients" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwPatients].[PatientID] AS [PatientID], 
+    [vwPatients].[NameAndSurname] AS [NameAndSurname], 
+    [vwPatients].[MaleOrFemale] AS [MaleOrFemale], 
+    [vwPatients].[DateOfBirth] AS [DateOfBirth], 
+    [vwPatients].[Address] AS [Address], 
+    [vwPatients].[PhoneNumberHome] AS [PhoneNumberHome], 
+    [vwPatients].[PhoneNumberMobile] AS [PhoneNumberMobile], 
+    [vwPatients].[PhoneNumberContactPerson] AS [PhoneNumberContactPerson], 
+    [vwPatients].[NumberOfIDCard] AS [NumberOfIDCard], 
+    [vwPatients].[BloodType] AS [BloodType]
+    FROM [dbo].[vwPatients] AS [vwPatients]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwPharmaceuticalManufacturing" EntityType="Self.vwPharmaceuticalManufacturing" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwPharmaceuticalManufacturing].[ManufacturerID] AS [ManufacturerID], 
+    [vwPharmaceuticalManufacturing].[ManufacturerName] AS [ManufacturerName], 
+    [vwPharmaceuticalManufacturing].[AddressOfManufacturer] AS [AddressOfManufacturer], 
+    [vwPharmaceuticalManufacturing].[PhoneNumberOfManufacturer] AS [PhoneNumberOfManufacturer], 
+    [vwPharmaceuticalManufacturing].[EmailOfManufacturer] AS [EmailOfManufacturer], 
+    [vwPharmaceuticalManufacturing].[Note] AS [Note]
+    FROM [dbo].[vwPharmaceuticalManufacturing] AS [vwPharmaceuticalManufacturing]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwPharmacy" EntityType="Self.vwPharmacy" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwPharmacy].[PharmacyID] AS [PharmacyID], 
+    [vwPharmacy].[NameOfTheDrug] AS [NameOfTheDrug], 
+    [vwPharmacy].[ScopeOfApplication] AS [ScopeOfApplication], 
+    [vwPharmacy].[QuantityOnCondition] AS [QuantityOnCondition], 
+    [vwPharmacy].[Note] AS [Note], 
+    [vwPharmacy].[ManufacturerID] AS [ManufacturerID], 
+    [vwPharmacy].[Expr1] AS [Expr1], 
+    [vwPharmacy].[ManufacturerName] AS [ManufacturerName]
+    FROM [dbo].[vwPharmacy] AS [vwPharmacy]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwTakeMedication" EntityType="Self.vwTakeMedication" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwTakeMedication].[TakeMedicationID] AS [TakeMedicationID], 
+    [vwTakeMedication].[DateOfTaking] AS [DateOfTaking], 
+    [vwTakeMedication].[QuantityOfTheDrug] AS [QuantityOfTheDrug], 
+    [vwTakeMedication].[PharmacyID] AS [PharmacyID], 
+    [vwTakeMedication].[MedicalStaffID] AS [MedicalStaffID], 
+    [vwTakeMedication].[PatientID] AS [PatientID], 
+    [vwTakeMedication].[Expr1] AS [Expr1], 
+    [vwTakeMedication].[NameOfTheDrug] AS [NameOfTheDrug], 
+    [vwTakeMedication].[Expr2] AS [Expr2], 
+    [vwTakeMedication].[NameAndSurname] AS [NameAndSurname], 
+    [vwTakeMedication].[Expr3] AS [Expr3], 
+    [vwTakeMedication].[Expr4] AS [Expr4]
+    FROM [dbo].[vwTakeMedication] AS [vwTakeMedication]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__tblDoctor__Medic__1B0907CE" Association="Self.FK__tblDoctor__Medic__1B0907CE">
+      <End Role="tblMedicalDepartments" EntitySet="tblMedicalDepartments" />
+      <End Role="tblDoctorAppointment" EntitySet="tblDoctorAppointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblDoctor__Patie__1BFD2C07" Association="Self.FK__tblDoctor__Patie__1BFD2C07">
+      <End Role="tblPatients" EntitySet="tblPatients" />
+      <End Role="tblDoctorAppointment" EntitySet="tblDoctorAppointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblLogin__Medica__173876EA" Association="Self.FK__tblLogin__Medica__173876EA">
+      <End Role="tblMedicalStaff" EntitySet="tblMedicalStaff" />
+      <End Role="tblLogin" EntitySet="tblLogin" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblLogin__Patien__182C9B23" Association="Self.FK__tblLogin__Patien__182C9B23">
+      <End Role="tblPatients" EntitySet="tblPatients" />
+      <End Role="tblLogin" EntitySet="tblLogin" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblLoginC__Medic__76619304" Association="Self.FK__tblLoginC__Medic__76619304">
+      <End Role="tblMedicalStaff" EntitySet="tblMedicalStaff" />
+      <End Role="tblLoginCurrent" EntitySet="tblLoginCurrent" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblLoginC__Patie__7755B73D" Association="Self.FK__tblLoginC__Patie__7755B73D">
+      <End Role="tblPatients" EntitySet="tblPatients" />
+      <End Role="tblLoginCurrent" EntitySet="tblLoginCurrent" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblMedica__Medic__1273C1CD" Association="Self.FK__tblMedica__Medic__1273C1CD">
+      <End Role="tblMedicalDepartments" EntitySet="tblMedicalDepartments" />
+      <End Role="tblMedicalStaff" EntitySet="tblMedicalStaff" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblPharma__Manuf__20C1E124" Association="Self.FK__tblPharma__Manuf__20C1E124">
+      <End Role="tblPharmaceuticalManufacturing" EntitySet="tblPharmaceuticalManufacturing" />
+      <End Role="tblPharmacy" EntitySet="tblPharmacy" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblTakeMe__Medic__24927208" Association="Self.FK__tblTakeMe__Medic__24927208">
+      <End Role="tblMedicalStaff" EntitySet="tblMedicalStaff" />
+      <End Role="tblTakeMedication" EntitySet="tblTakeMedication" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblTakeMe__Patie__25869641" Association="Self.FK__tblTakeMe__Patie__25869641">
+      <End Role="tblPatients" EntitySet="tblPatients" />
+      <End Role="tblTakeMedication" EntitySet="tblTakeMedication" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblTakeMe__Pharm__239E4DCF" Association="Self.FK__tblTakeMe__Pharm__239E4DCF">
+      <End Role="tblPharmacy" EntitySet="tblPharmacy" />
+      <End Role="tblTakeMedication" EntitySet="tblTakeMedication" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
