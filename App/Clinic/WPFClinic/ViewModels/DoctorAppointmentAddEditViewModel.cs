@@ -79,6 +79,9 @@ namespace WPFClinic.ViewModels
             {
                 AddDoctorAppointment addDoctorAppointment = new AddDoctorAppointment();
                 addDoctorAppointment.ShowDialog();
+
+                // ovo koristimo da bi posle dodavanja DoctorAppointments-a u gridu bili 
+                // prikazani novi rezultati, refresovani!
                 using (Service1Client wcf = new Service1Client())
                 {
                     DoctorAppointmentList = wcf.GetAllDoctorAppointment().ToList();
