@@ -1,0 +1,26 @@
+﻿<Window x:Class="WPFClinic.View.AddPharmaceuticalManufacturing"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFClinic.View"
+        mc:Ignorable="d"
+        Title="Add/Edit Pharmaceutical Manufacturing" Height="450" Width="650" Background="PowderBlue" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="Add/Edit Pharmaceutical Manufacturing" HorizontalAlignment="Center" Margin="106,36,110.2,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="22"/>
+        <Label Content="Manufacturer Name :" HorizontalAlignment="Left" Margin="64,99,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Address :" HorizontalAlignment="Left" Margin="64,141,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Contact Phone :" HorizontalAlignment="Left" Margin="64,184,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label x:Name="label" Content="Email :" HorizontalAlignment="Left" Margin="67,234,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label x:Name="label1" Content="Note :" HorizontalAlignment="Left" Margin="67,281,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <TextBox Name="txtName" Text="{Binding PharmaceuticalManufacturing.ManufacturerName, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="20" Margin="282,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291"/>
+        <TextBox Name="txtAddress" Text="{Binding PharmaceuticalManufacturing.AddressOfManufacturer, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="20" Margin="282,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291"/>
+        <TextBox Name="txtPhoneHome" Text="{Binding PharmaceuticalManufacturing.PhoneNumberOfManufacturer, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="20" Margin="282,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291"/>
+        <TextBox x:Name="txtEmail" Text="{Binding PharmaceuticalManufacturing.EmailOfManufacturer, UpdateSourceTrigger=PropertyChanged}"
+                 HorizontalAlignment="Left" Height="23" Margin="282,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290"/>
+        <TextBox x:Name="txtNote" Text="{Binding PharmaceuticalManufacturing.Note, UpdateSourceTrigger=PropertyChanged}"
+                 HorizontalAlignment="Left" Height="23" Margin="282,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290"/>
+        <Button Content="Save" Command="{Binding Save, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="282,342,0,0" VerticalAlignment="Top" Width="75" FontWeight="Bold"/>
+        <Button Content="Close" Command="{Binding Close, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="497,342,0,0" VerticalAlignment="Top" Width="75" FontWeight="Bold"/>
+    </Grid>
+</Window>
